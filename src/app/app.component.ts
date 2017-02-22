@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
-
+import { Component,Input} from '@angular/core';
+import {TodoService} from './communication/todoService'
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector:'app-root',
+  template:`<div>
+  <h1>我是父组件</h1>
+     <br/>
+     <a-child></a-child>
+     <br/>
+     <b-child></b-child>
+     <br/>
+  </div>`,
+  providers:[TodoService]
 })
-export class AppComponent {
-  title = 'app works!';
+export class AppComponent{
 }
