@@ -2,19 +2,33 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { AppComponent } from './app.component';
-import {InputComponent} from './basic/input.component'
-import {AComponent} from './communication/a.component'
-import {BComponent} from './communication/b.component'
 
+import {RouterModule,Routes} from '@angular/router';
+//
+import { AppComponent } from './app.component';
+//
+import {ArticleList} from './route/articleList'
+import {ArticleDetails} from './route/articleDetails'
+
+const appRoute:Routes=[
+  {
+    path:'',
+    component:ArticleList
+  },
+  {
+    path:'article',
+    component:ArticleDetails
+  }
+];
 @NgModule({
   declarations: [
-    AppComponent,AComponent,BComponent
+    AppComponent,ArticleList,ArticleDetails
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(appRoute)
   ],
   providers: [],
   bootstrap: [AppComponent]

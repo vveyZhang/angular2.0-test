@@ -16,5 +16,4 @@ export class BComponent{
   changeA(todo){
     this.todoService.changeTodo.emit(todo)
   }
-
 }

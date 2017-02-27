@@ -15,7 +15,6 @@ export class AComponent implements OnDestroy{
     this.todoService.changeTodo.subscribe(todo=>{
       this.aStatus=todo
     });
-    this.todoService.getHttp().subscribe(json=>console.log(json))
   }
   ngOnDestroy(){
     this.todoService.changeTodo.unsubscribe();
